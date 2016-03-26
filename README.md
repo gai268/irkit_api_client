@@ -1,6 +1,6 @@
-# irkit_api_gui
+# irkit_api_client
 
-http://a-tagai.github.io/irkit_api_client/
+https://a-tagai.github.io/irkit_api_client/
 
 ##メモ書き
 [React](https://facebook.github.io/react/ "React")を使用してるので、
