@@ -1,3 +1,4 @@
+(function(){
 //POST/messagesフォーム
 var PostMessageBox = React.createClass({
   getInitialState() {
@@ -47,7 +48,7 @@ var InputArea = React.createClass({
     message: React.PropTypes.string.isRequired,
     setParentState: React.PropTypes.func.isRequired
   },
-  handleChange: function(event) {
+  handleChange: function(e) {
     this.props.setParentState({
       clientkey: React.findDOMNode(this.refs.clientkey).value,
       deviceid: React.findDOMNode(this.refs.deviceid).value,
@@ -57,27 +58,21 @@ var InputArea = React.createClass({
   render: function(){
     return (
       <div>
-        <div className="form-group">
-         <label className="col-lg-2 control-label">clientkey:</label>
-         <div className="col-lg-10">
-           <input className="form-control" type="text" ref="clientkey"
-           value={this.props.clientkey} onChange={this.handleChange} />
-         </div>
+        <div className="form-group col-lg-12">
+         <label className="control-label">clientkey:</label>
+         <input className="form-control" type="text" ref="clientkey"
+         value={this.props.clientkey} onChange={this.handleChange} />
         </div>
-        <div className="form-group">
-         <label className="col-lg-2 control-label">deviceid:</label>
-         <div className="col-lg-10">
-           <input className="col-lg-10 form-control" type="text" ref="deviceid"
-           value={this.props.deviceid} onChange={this.handleChange} />
-         </div>
+        <div className="form-group col-lg-12">
+         <label className="control-label">deviceid:</label>
+         <input className="form-control" type="text" ref="deviceid"
+         value={this.props.deviceid} onChange={this.handleChange} />
         </div>
-        <div className="form-group">
-          <label className="col-lg-2 control-label">message:</label>
-          <div className="col-lg-10">
-            <textarea className="form-control" rows="3"
-            ref="message"
-            value={this.props.message} onChange={this.handleChange}/>
-          </div>
+        <div className="form-group col-lg-12">
+          <label className="control-label">message:</label>
+          <textarea className="form-control" rows="3"
+          ref="message"
+          value={this.props.message} onChange={this.handleChange}/>
         </div>
       </div>
     );
@@ -119,3 +114,5 @@ var PostButton = React.createClass({
 });
 
 React.render(<PostMessageBox />, document.getElementById('app'));
+
+})();
